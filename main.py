@@ -1,4 +1,5 @@
 from docplex.mp.model import Model
+import time
 
 # Crear modelo
 modelo = Model(name="Pociones_EnteroMixto")
@@ -73,7 +74,10 @@ modelo.add_constraint(y[3] + y[9] <= 1, "Excluyentes_Respiracion_Caida")
 modelo.add_constraint(x[5] >= 7 * y[2], "Secuencia_Veneno_Dano")
 
 # Resolver el modelo
+start_time = time.time()
 solucion = modelo.solve()
+end_time = time.time()
+tiempo_computacional = end_time - start_time
 
 # Mostrar resultados
 print("* SOLUCIÓN ÓPTIMA")
