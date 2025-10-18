@@ -81,6 +81,7 @@ tiempo_computacional = end_time - start_time
 
 # Mostrar resultados
 print("* SOLUCIÓN ÓPTIMA")
+print(f"Resuelto en {tiempo_computacional:.4f} segundos.")
 
 if solucion:
     print(f"XP total máximo: {solucion.objective_value:.0f}")
